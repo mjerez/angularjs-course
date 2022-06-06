@@ -3,24 +3,25 @@
 
     console.log("Starting the angular app");
 
-    var x=1;
+    let x=1;
 
     angular.module('MyAngularApp', [])
     .controller("MyFirstController", ['$scope', '$filter', '$injector' ,'$log', DIController]);
     
-    function DIController (
-                                              $scope, 
-                                              $filter,
-                                              $injector,
-                                              $log) {
+    function DIController ( $scope, 
+                            $filter,
+                            $injector,
+                            $log) {
         console.log ("Starting the controller");
 
-        $scope.name=""; 
-        $scope.totalValue=0;
+        const me=this;
 
-        $scope.displayNumeric=function () {
-            var totalNameValue=calculateNumerForString($scope.name);
-            $scope.totalValue=totalNameValue;
+        me.name=""; 
+        me.totalValue=0;
+
+        me.displayNumeric=function () {
+            let totalNameValue=calculateNumerForString(me.name);
+            me.totalValue=totalNameValue;
         }
 
         function calculateNumerForString(string) {
@@ -32,13 +33,13 @@
         }
 
 
-        $scope.sayHello = function () {
+        me.sayHello = function () {
             return "Hi there!";
         }
 
-        $scope.upperCase=function () {
+        me.upperCase=function () {
             var upCase=$filter("uppercase");
-            $scope.textInput=upCase($scope.textInput);
+            me.textInput=upCase(me.textInput);
         }
 
         console.log($injector.annotate(DIController));

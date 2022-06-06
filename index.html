@@ -6,16 +6,16 @@
         <script src="app.js"></script>
     </header>
     <body>
-        <div ng-controller="MyFirstController">
+        <div ng-controller="MyFirstController as controller">
             Some div content updated again!!!<br>
-            <input type="text" ng-model="name" ng-keyup="displayNumeric();">
-            <div>My name is: {{name}} </div>
+            <input type="text" ng-model="controller.name" ng-keyup="controller.displayNumeric();">
+            <div>My name is: {{controller.name}} </div>
             <div>
-                The total ASCII numeric value is: {{totalValue}}
+                The total ASCII numeric value is: {{controller.totalValue}}
             </div>
-            <div>{{sayHello()}}</div>
+            <div>{{controller.sayHello()}}</div>
             <div>
-                <input type="text" ng-model="textInput" ng-blur="upperCase();">
+                <input type="text" ng-model="controller.textInput" ng-blur="controller.upperCase();">
             </div>
         </div>
 
