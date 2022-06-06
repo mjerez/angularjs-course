@@ -8,7 +8,17 @@
     <body>
         <div ng-controller="MyFirstController">
             Some div content updated again!!!<br>
+            <input type="text" ng-model="name" ng-keyup="displayNumeric();">
+            <div>My name is: {{name}} </div>
+            <div>
+                The total ASCII numeric value is: {{totalValue}}
+            </div>
+            <div>{{sayHello()}}</div>
+            <div>
+                <input type="text" ng-model="textInput" ng-blur="upperCase();">
+            </div>
         </div>
+
 
     </body>
 </html>
