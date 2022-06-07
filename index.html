@@ -14,9 +14,31 @@
                 The total ASCII numeric value is: {{controller.totalValue}}
             </div>
             <div>{{controller.sayHello()}}</div>
+            <div>{{controller.sayLovesMessage()}}</div>            
             <div>
                 <input type="text" ng-model="controller.textInput" ng-blur="controller.upperCase();">
             </div>
+            <div>Applying an uppercase filter to: {{"Felix Manuel Jerez" | uppercase}}</div>
+            <div>Currency filtering to a numeric value: {{1500.1|currency:'ARS':3}}</div>
+            <div>Cookie Cost: {{controller.cookieCost | currency}}</div>
+            <div>
+                <input type="button" ng-click="controller.showMeInformation()" value="Show Info about me (this)">
+            </div>            
+            <div>
+                <input type="button" ng-click="controller.showScopeInformation()" value="Show $scope Info">
+            </div>         
+            <div>
+                <input type="button" ng-click="controller.showNumberOfWatchers()" value="Show Number of Watchers">
+            </div>         
+            <div>
+                <input type="button" ng-click="controller.countOnce()" value="Count Once">
+            </div>   
+            <div>
+                <input type="button" ng-click="controller.incrementCounter()" value="Increment Counter">
+                <input type="button" ng-click="controller.incrementCounterApply()" value="Increment Counter Apply">
+                <input type="button" ng-click="controller.incrementTimeoutCounter()" value="Increment Counter Angular Timeout">
+                Counter: {{counter}}
+            </div>                                   
         </div>
 
 
