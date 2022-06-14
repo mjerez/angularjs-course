@@ -114,6 +114,29 @@
 
         $log.log("Hola");
 
+        //ng-repeat code
+        me.productsArray =["XBOX", "Playstation"];
+
+        me.expandedProductsArray=[
+            {
+                name:"XBOX",
+                quantity:1
+            },
+            {
+                name:"Playstation",
+                quantity:5
+            }
+        ];
+
+        me.addToList=function () {
+            let newItem={
+                name:me.newItemName,
+                quantity:me.newItemQuantity
+            }
+            me.expandedProductsArray.push(newItem);
+        }
+
+
     } ;
 
     // Custom Filter
@@ -125,5 +148,7 @@
             return input;
         }
     }
+
+
 
 } ) ();

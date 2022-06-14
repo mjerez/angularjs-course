@@ -38,7 +38,27 @@
                 <input type="button" ng-click="controller.incrementCounterApply()" value="Increment Counter Apply">
                 <input type="button" ng-click="controller.incrementTimeoutCounter()" value="Increment Counter Angular Timeout">
                 Counter: {{counter}}
+            </div>
+            <div><p>ng-repeat section - just names</p>
+            </div>
+            <div>
+                <input type="text" ng-model="controller.productsArray[0]" value="Set the first element name">
+                <ul >
+                    <li ng-repeat="product in controller.productsArray">{{$index+1}}-{{product}}</li>
+                </ul>
             </div>                                   
+            <div><p>ng-repeat section - names and quantities</p>
+            </div>
+            <div>
+                <ul >
+                    <li ng-repeat="fullProduct in controller.expandedProductsArray | filter : searchValue">{{$index+1}}-{{fullProduct.name}} - Qty: {{fullProduct.quantity}}</li>
+                </ul>
+                <input type="text" ng-model="controller.newItemName" placeholder="item name"><br>
+                <input type="text" ng-model="controller.newItemQuantity" placeholder="item quantity"><br>
+                <button ng-click="controller.addToList()">Add item to the list</button><br><br>
+                Search Value: <input type="text" ng-model="searchValue">
+            </div>                                   
+
         </div>
 
 
